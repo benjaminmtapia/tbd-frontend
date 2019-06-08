@@ -1,11 +1,11 @@
-export const sentimientosIsapre = {
-  type: 'bar',
+export const graficoTorta = {
+  type: 'donut',
     data: {
       labels: ['Fonasa', 'Isapre 1', 'Isapre 2', 'Isapre 3'],
       datasets: [
         {
           label: 'Aprobacion',
-          data: [75, 70, 45, 37],
+          data: [],
           backgroundColor: [
             'rgb(102, 140, 255, 0.7)',
             'rgb(102, 140, 255, 0.7)',
@@ -16,7 +16,7 @@ export const sentimientosIsapre = {
         },
         {
           label: 'Desaprobacion',
-          data: [30, 47, 30, 30],
+          data: [],
           backgroundColor: [
             'rgba(255, 102, 102, 0.7)',
             'rgba(255, 102, 102, 0.7)',
@@ -42,4 +42,4 @@ export const sentimientosIsapre = {
     }
   }
   
-  export default sentimientosIsapre;
+  export default graficoTorta;

@@ -1,12 +1,11 @@
 <template>
     <div>
-    <canvas id="graficoAfiliados" width="300" height="200"></canvas>
+    <canvas id="masComentadas"  width="400" height="300"></canvas>    
     </div>
 </template>
 
 <script>
-import cantidadAfiliados from '../graficas/cantidadAfiliados.js';
-
+import masComentadas from '../graficas/masComentadas.js';
 export default {
     methods: {
             createChart(chartId, chartData) {
@@ -20,11 +19,12 @@ export default {
     },
     data() {
         return {
-            afiliados: cantidadAfiliados,
+            masComentadas: masComentadas,
+            
         }
     },
     mounted() {
-        this.createChart('graficoAfiliados', this.afiliados);
+        this.createChart('masComentadas', this.masComentadas);
     },
 }
 </script>

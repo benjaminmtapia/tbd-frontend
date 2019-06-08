@@ -4,14 +4,14 @@ export const cantidadAfiliados = {
         labels: ['Fonasa', 'Isapre 1', 'Isapre 2', 'Isapre 3'],
         datasets: [
             {
-                label: 'Hombres en esta Isapre',
-                data: [80, 70, 45, 37],
+                label: 'Aprobacion',
+                data: [75, 70, 45, 37],
                 borderWidth: 5,
                 fill:false,
                 borderColor:   'rgb(205, 92, 92)',
               },
               {
-                label: 'Mujeres en esta Isapre',
+                label: 'Desaprobacion',
                 data: [8, 68, 55, 17],
                 borderWidth: 5,
                 fill:false,
@@ -34,5 +34,4 @@ export const cantidadAfiliados = {
         }
       }
     }
-    
-    export default cantidadAfiliados;
+export default cantidadAfiliados;

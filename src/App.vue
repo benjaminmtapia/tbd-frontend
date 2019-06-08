@@ -3,7 +3,7 @@
   <v-app>
     <v-toolbar app class="navbar">
       <v-toolbar-side-icon @click="drawer=!drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>TBD</v-toolbar-title>
+      <v-toolbar-title>Taller de Bases de Datos</v-toolbar-title>
       <v-spacer></v-spacer>
     </v-toolbar>
 
@@ -27,7 +27,9 @@
       </div>
     </v-navigation-drawer>
 
-    <v-content> <router-view/> </v-content>
+    <v-content> <router-view/> 
+    
+    </v-content>
   </v-app>
 </template>
 
@@ -49,8 +51,10 @@ export default {
 }
 .about{
   padding-top: 30px;
+  margin-top:30px;
   text-align: center;
   color: #aaa;
+  padding:5px;
   background-color: blue lighten-5;
 }
 .about a{
@@ -58,7 +62,6 @@ export default {
   font-family: calibri;
   font-size: 13px;
   text-decoration: none;
-  padding:10px;
   margin-top:5px;
 }
 .navbar {

@@ -6,25 +6,19 @@
           <Carrusel/>
         </v-flex>
 
-      </v-layout>
-
-      <v-layout mt-5 justify-center>
-      <v-flex  xs6>
-          <Sentimientos/>
-      </v-flex>
-      </v-layout>
+      </v-layout>      
       </v-container>
+      <Cards/>
   </div>
 </template>
 
 
 <script>
   import Sentimientos from '../components/Sentimientos'
-  import Carrusel from '../components/PasaFotos'
+
   export default {
     components: {
       Sentimientos,
-      Carrusel
 
     }
   }

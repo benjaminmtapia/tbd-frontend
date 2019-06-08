@@ -1,12 +1,12 @@
 <template>
     <div>
-    <canvas id="grafica1"  width="300" height="300"></canvas>
+    <canvas id="grafica1"  width="500" height="300"></canvas>    
     </div>
 </template>
 
 <script>
 import graficaSentimientos from '../graficas/sentimientos.js';
-
+import graficaCircular from '../graficas/graficaCircular.js';
 export default {
     methods: {
             createChart(chartId, chartData) {
@@ -21,6 +21,8 @@ export default {
     data() {
         return {
             graficaSentimientos: graficaSentimientos,
+            graficaCircular: graficaCircular,
+            drawer:false
         }
     },
     mounted() {
