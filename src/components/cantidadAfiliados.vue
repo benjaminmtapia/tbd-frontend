@@ -1,11 +1,11 @@
 <template>
     <div>
-    <canvas id="grafica1"  width="300" height="300"></canvas>
+    <canvas id="graficoAfiliados" width="300" height="300"></canvas>
     </div>
 </template>
 
 <script>
-import graficaSentimientos from '../graficas/sentimientos.js';
+import cantidadAfiliados from '../graficas/cantidadAfiliados.js';
 
 export default {
     methods: {
@@ -20,11 +20,11 @@ export default {
     },
     data() {
         return {
-            graficaSentimientos: graficaSentimientos,
+            afiliados: cantidadAfiliados,
         }
     },
     mounted() {
-        this.createChart('grafica1', this.graficaSentimientos);
+        this.createChart('graficoAfiliados', this.afiliados);
     },
 }
 </script>
