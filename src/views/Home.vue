@@ -2,6 +2,7 @@
   <v-container>
     <v-layout justify-center>
       <v-flex xs3 ma-4>
+          <vs-card actionable class="cardx" style="background-color:#D4D6FF !important">
         <v-hover>
         <v-card
           slot-scope="{ hover }"
@@ -31,8 +32,10 @@
           </v-card-text>
         </v-card>
       </v-hover>
+          </vs-card>
       </v-flex>
       <v-flex xs3 ma-4>
+          <vs-card actionable class="cardx" style="background-color:#D4D6FF !important">
       <v-hover>
         <v-card
           slot-scope="{ hover }"
@@ -63,8 +66,10 @@
           </v-card-text>
         </v-card>
       </v-hover>
+          </vs-card>
       </v-flex>
       <v-flex xs3 ma-4>
+          <vs-card actionable class="cardx" style="background-color:#D4D6FF !important">
       <v-hover>
         <v-card
           slot-scope="{ hover }"
@@ -92,6 +97,7 @@
           </v-card-text>
         </v-card>
       </v-hover>
+          </vs-card>
       </v-flex>
     </v-layout>
     <Sprint1/>
