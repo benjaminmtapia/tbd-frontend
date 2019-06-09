@@ -1,0 +1,27 @@
+{
+  "isapres": [
+    {
+      "id": 1,
+      "first_name": "Fonasa",
+      "acuerdo": "75"
+    },
+    {
+      "id": 2,
+      "first_name": "Consalud",
+      "acuerdo": "32"
+    },
+    {
+      "id": 3,
+      "first_name": "Colmena",
+      "acuerdo": "78"
+    }
+  ],
+  "datos":{
+    "acuerdo":[
+      "25","30"
+    ],
+    "desacuerdo":[
+      "55","32"
+    ]
+  }
+}

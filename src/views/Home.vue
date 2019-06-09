@@ -20,9 +20,13 @@
           >
           
             <h4 class="display-1 font-weight-light orange--text mb-2">¿Qué es un Fondo de Salud?</h4>
-            <div class="font-weight-light title mb-2" style="font-size:13px;">
-              Our Vintage kitchen utensils delight any chef.<br>
-              Made of bamboo by hand
+            <div style="font-size:14px;">
+              <p>Un fondo de salud es una entidad que se encarga de la cobertura de atención para clínicas y hospitales,
+              ya sean públicas o privadas. Estas aseguran el financiamiento de tratamientos médicos y la atención de estos por parte 
+              de los profesionales de la salud.
+              <br>
+              Estos fondos pueden ser públicos (FONASA) o privados (ISAPRE), donde cambia el modo de financiamiento, y para ambas
+              el sistema es distinto.</p>
             </div>
           </v-card-text>
         </v-card>
@@ -90,17 +94,19 @@
       </v-hover>
       </v-flex>
     </v-layout>
+    <Sprint1/>
   </v-container>
-
+  
 </template>
 
 
 <script>
   import Hover from '../components/Hovers.vue'
-
+  import Sprint1 from '../views/Sprint1.vue'
   export default {
     components: {
       Hover,
+      Sprint1
 
     }
   }
