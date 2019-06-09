@@ -1,8 +1,10 @@
 <template>
   <div class="container">
-    <bar-chart
+    <chartjs-bar
       v-if="loaded"
-      :chartdata="chartdata"
+      v-bind:labels="this.chartdata.labels"
+      v-bind:datasets="this.chartdata.datasets"
+      
       />
   </div>
 </template>
@@ -16,6 +18,7 @@ export default {
   data: () => ({
     loaded: false,
     chartdata:{
+        labels:['hola','bb','como','estas'],
         datasets:[{
             data:[10,1,2,3]
         }]

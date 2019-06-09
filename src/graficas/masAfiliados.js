@@ -6,7 +6,7 @@ export const masComentadas = {
         datasets: [
             {
                 label: 'Aprobacion',
-                data: [14,13,12,11,10,9,8,7,6,5,4,3,2],
+                data: ["14","13","12","11","10","9","8",7,6,5,4,3,2],
                 borderWidth: 5,
                 backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',

@@ -1,5 +1,5 @@
 <script>
-import { Bar } from 'vue-chartjs'
+import { Line,Bar,Donut } from 'vue-chartjs'
 
 export default {
   extends: Bar,

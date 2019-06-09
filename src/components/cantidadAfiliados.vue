@@ -1,6 +1,6 @@
 <template>
     <div>
-    <canvas id="graficoAfiliados" width="300" height="200"></canvas>
+    <canvas id="graficoAfiliados" width="300" height="200" v-bind:data="this.chartData"></canvas>
     </div>
 </template>
 
@@ -21,10 +21,22 @@ export default {
     data() {
         return {
             afiliados: cantidadAfiliados,
+            chartData:{
+                labels:['fonasa2','isapre1','isapre4','isapre3'],
+                datasets:[
+                    {
+                        data:[1,2,3,4,5]
+                    }
+                ],
+                options:{
+
+                }
+            }
         }
     },
     mounted() {
         this.createChart('graficoAfiliados', this.afiliados);
+        this.afiliados.type='donut';
     },
 }
 </script>

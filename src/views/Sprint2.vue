@@ -2,7 +2,7 @@
     <v-container>
         <v-layout justify-center>
             <v-flex xs6>
-        <cantidadAfiliados/>
+            <Sentimientos/>
             </v-flex>
         </v-layout>
     </v-container>
@@ -10,9 +10,10 @@
 
 <script>
 import cantidadAfiliados from '../components/cantidadAfiliados.vue'
+import Sentimientos from '../components/Sentimientos.vue'
 export default {
     components:{
-        cantidadAfiliados
+        cantidadAfiliados,Sentimientos
     }
 }
 </script>
