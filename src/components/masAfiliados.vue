@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import masComentadas from '../graficas/masComentadas.js';
+import masComentadas from '../graficas/masAfiliados.js';
 export default {
     methods: {
             createChart(chartId, chartData) {
@@ -24,6 +24,7 @@ export default {
         }
     },
     mounted() {
+        //poner aqui en axios this.data y meterlo en el metodo createChart
         this.createChart('masComentadas', this.masComentadas);
     },
 }

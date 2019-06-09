@@ -7,15 +7,15 @@ export const sentimientosIsapre = {
           label: 'Aprobacion',
           data: [75, 70, 45, 37],
           backgroundColor: [
-            'rgb(102, 140, 255, 0.7)',
-            'rgb(102, 140, 255, 0.7)',
-            'rgb(102, 140, 255, 0.7)',
-            'rgb(102, 140, 255, 0.7)'
+            'rgb(147, 250, 198, 0.7)',
+            'rgb(147, 250, 198, 0.7)',
+            'rgb(147, 250, 198, 0.7)',
+            'rgb(147, 250, 198, 0.7)',
           ],
           borderWidth: 0
         },
         {
-          label: 'Desaprobacion',
+          label: 'Decepción',
           data: [30, 47, 30, 30],
           backgroundColor: [
             'rgba(255, 102, 102, 0.7)',

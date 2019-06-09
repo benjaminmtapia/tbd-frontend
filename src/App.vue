@@ -2,13 +2,13 @@
 
   <v-app>
     <v-toolbar app class="navbar">
-      <v-toolbar-side-icon @click="drawer=!drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>Taller de Bases de Datos</v-toolbar-title>
+      <v-toolbar-side-icon title="Menú" @click="drawer=!drawer"></v-toolbar-side-icon>
+      <h3> Taller de Bases de Datos </h3>
       <v-spacer></v-spacer>
     </v-toolbar>
 
-    <v-navigation-drawer app temporary v-model="drawer">
-      <div class="about">
+    <v-navigation-drawer class="about" mt-5 app temporary v-model="drawer">
+      <div style="margin-top:35px;">
       <h3>Navegación</h3><br>
       <v-avatar color="indigo">
       <v-icon dark>account_circle</v-icon>
@@ -47,7 +47,8 @@ export default {
 </script>
 <style scope>
 #app{
-  background-color: #F7F7FF;
+  background-image: url(https://i.stack.imgur.com/nItQK.png);
+  background-size: 100% 100%;
 }
 .about{
   padding-top: 30px;
@@ -55,7 +56,7 @@ export default {
   text-align: center;
   color: #aaa;
   padding:5px;
-  background-color: blue lighten-5;
+  background-color: #eee !important;
 }
 .about a{
   color:#2D86CE;
@@ -65,6 +66,9 @@ export default {
   margin-top:5px;
 }
 .navbar {
-  background-image: linear-gradient(to right,#98c1d9, #1976d2);
+ background-color: #D4D6FF !important;
+ font-family: Arial;
+ font-size:15px;
 }
+
 </style>
