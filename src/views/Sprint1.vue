@@ -20,6 +20,16 @@
             </vs-card>
             </v-flex>
         </v-layout>
+
+        <v-layout wrap justify-center mt-5>
+            
+            <v-flex xs6 mt-5 white pa-3 style="background-color:#D4D6FF !important">
+            <vs-card actionable class="cardx" >
+                <h2 style="text-align:center;">Cantidad de Afiliados por Isapre</h2>
+                <cantidadAfiliadosIsapres/>
+            </vs-card>
+            </v-flex>
+        </v-layout>
         
          <v-layout wrap justify-center mt-5>
             <v-flex xs6 mt-5 white pa-3>
@@ -33,11 +43,13 @@
 import Sentimientos from '../components/Sentimientos.vue'
 import cantidadAfiliados from '../components/cantidadAfiliados.vue';
 import masComentadas from '../components/masAfiliados.vue';
+import cantidadAfiliadosIsapres from '../components/cantidadAfiliadosIsapres.vue'
 export default {
     components:{
         Sentimientos,
         cantidadAfiliados,
-        masComentadas
+        masComentadas,
+        cantidadAfiliadosIsapres,
     }
 }
 </script>

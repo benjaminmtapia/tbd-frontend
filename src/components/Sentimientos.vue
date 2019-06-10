@@ -1,11 +1,10 @@
 <template>
     <div>
-    <canvas id="graficoAfiliados" width="300" height="200"></canvas>
+    <canvas id="graficoSentiemientos" width="300" height="200"></canvas>
     </div>
 </template>
 
 <script>
-import cantidadAfiliados from '../graficas/cantidadAfiliados.js';
 import axios from 'axios';
 export default {
     data() {
@@ -79,7 +78,7 @@ export default {
                 chartData.data.datasets[0].data = data.data;
                 console.log (chartData.data.datasets);
                 const ctx = document.getElementById(chartId);
-                const graficoAfiliados = new Chart(ctx, {
+                const graficoSentiemientos = new Chart(ctx, {
                     type: chartData.type,
                     data: chartData.data,
                     options: chartData.options,
@@ -89,7 +88,7 @@ export default {
         },
     },
     mounted() {
-        this.createChart('graficoAfiliados', this.chartData);
+        this.createChart('graficoSentimientos', this.chartData);
     },
 }
 </script>

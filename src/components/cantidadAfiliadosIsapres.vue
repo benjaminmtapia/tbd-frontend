@@ -1,22 +1,23 @@
 <template>
     <div>
-    <canvas id="graficoAfiliados" width="300" height="200"></canvas>
+    <canvas id="graficoAfiliadosIsapres" width="300" height="200"></canvas>
     </div>
 </template>
 
-<script>
+<script> 
 import axios from 'axios';
 export default {
     data() {
         return {
             datos: [],
             chartData:{
-                type:'doughnut',
+                type:'bar',
                 data: {
-                    labels:['Fonasa', 'Isapre'],
+                    labels:['Fundación','Fusat','RíoBlanco','SanLorenzo','Colmena',
+                    'CruzBlanca','Consalud','VidaTres','NuevaMasVida','Banmédica','Chuquicamata','CruzDelNrote'],
                     datasets: [
                         {
-                            label: 'Cantidad de Afiliados, Fonasa v/s Isapre',
+                            label: 'Cantidad de Afiliados por Isapre',
                             data: [],
                             borderWidth: 5,
                             backgroundColor: [
@@ -44,6 +45,14 @@ export default {
                 options: {
                     responsive: true,
                     lineTension: 1,
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true,
+                                padding: 25,
+                            }
+                        }]
+                    }
                 }
             }     
         }  
@@ -54,8 +63,18 @@ export default {
             axios.get(url).then((data) => {
                 this.datos = data.data;
                 var temp = new Array();
-                temp[0] = this.datos[0];
-                temp[1] = this.datos[5];
+                temp[0] = this.datos[1];
+                temp[1] = this.datos[2];
+                temp[2] = this.datos[3];
+                temp[3] = this.datos[4];
+                temp[4] = this.datos[6];
+                temp[5] = this.datos[7];
+                temp[6] = this.datos[8];
+                temp[7] = this.datos[9];
+                temp[8] = this.datos[10];
+                temp[9] = this.datos[11];
+                temp[10] = this.datos[12];
+                temp[11] = this.datos[13];
                 chartData.data.datasets[0].data = temp;
                 const ctx = document.getElementById(chartId);
                 const graficoAfiliados = new Chart(ctx, {
@@ -67,7 +86,7 @@ export default {
         },
     },
     mounted() {
-        this.createChart('graficoAfiliados', this.chartData);
+        this.createChart('graficoAfiliadosIsapres', this.chartData);
     },
 }
 </script>
