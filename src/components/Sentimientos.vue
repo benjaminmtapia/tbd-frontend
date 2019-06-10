@@ -1,88 +1,95 @@
 <template>
     <div>
-    <canvas id="grafica1"  width="500" height="200"></canvas>   
-    {{this.labels}} 
+    <canvas id="graficoAfiliados" width="300" height="200"></canvas>
     </div>
 </template>
 
 <script>
-import graficaSentimientos from '../graficas/sentimientos.js';
-import graficaCircular from '../graficas/graficaCircular.js';
+import cantidadAfiliados from '../graficas/cantidadAfiliados.js';
 import axios from 'axios';
 export default {
-    methods: {
-        createChart(chartId, chartData) {
-            const ctx = document.getElementById(chartId);
-            const myChart = new Chart(ctx, {
-                type: chartData.type,
-                data: chartData.data,
-                options: chartData.options,
-            });
-        },
-        getLabels(fondos) {
-            var labels = [];
-            fondos.forEach(fondo => {
-                labels.push(fondo.nombre);
-            });
-            console.log("labels : " +labels);
-            return labels;
-        },
-    },
     data() {
         return {
-            acuerdo:[],
-            desacuerdo:[],
-            data:[],
-            labels:[],
             chartData:{
                 type:'bar',
-                data:{
-                
-                    labels: [],
+                data: {
+                    labels:['Fundación','Fusat','RíoBlanco','SanLorenzo','Isapre','Colmena',
+                    'CruzBlanca','Consalud','VidaTres','NuevaMasVida','Banmédica','Chuquicamata','CruzDelNrote'],
                     datasets: [
                         {
-                        label: 'Aprobacion',
-                        data: [],
-                        backgroundColor: [
-                        ],
-                        borderWidth: 0
+                            label: 'Acuerdo',
+                            data: [],
+                            borderWidth: 0,
+                            backgroundColor: [
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            ],
+                            fill:false,
+                            borderColor:'rgba(0, 0, 0, 0.1)',
                         },
                         {
-                        label: 'Comentarios Negativos',
-                        data: [30, 47, 30, 30],
-                        backgroundColor: [
-                        ],
-                        borderWidth: 0
-                        }
+                            label: 'Desacuerdo',
+                            data: [],
+                            borderWidth: 0,
+                            backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            ],
+                            fill:false,
+                            borderColor:'rgba(0, 0, 0, 0.1)',
+                        },
+                    
                     ]
-                    },
-                    options: {
+                },
+                options: {
                     responsive: true,
                     lineTension: 1,
                     scales: {
                         yAxes: [{
-                        ticks: {
-                            beginAtZero: true,
-                            padding: 25,
-                        }
+                            ticks: {
+                                beginAtZero: true,
+                                padding: 25,
+                            }
                         }]
                     }
-                    }
-                                
-                            }
-                        }
+                }
+            }     
+        }  
     },
-    created() {
-        var url = 'http://localhost:8081/fondoDeSaluds'; 
-        axios.get(url).then(response=>{
-            this.data =response.data;
-        });
-        this.labels = this.getLabels(this.data);
-
+    methods: {
+        createChart(chartId, chartData) {
+            const url = 'http://localhost:8081/fondoDeSalud/getComparacionIsapresA';
+            const url2 = 'http://localhost:8081/fondoDeSalud/getComparacionIsapresD';
+            
+            axios.get(url).then((data) => {
+                axios.get(url2).then((data)=>{
+                    chartData.data.datasets[1].data =data.data;
+                    
+                });
+                chartData.data.datasets[0].data = data.data;
+                console.log (chartData.data.datasets);
+                const ctx = document.getElementById(chartId);
+                const graficoAfiliados = new Chart(ctx, {
+                    type: chartData.type,
+                    data: chartData.data,
+                    options: chartData.options,
+                });
+            });
+            
+        },
     },
     mounted() {
-      // this.labels = getLabels(data);
-       
+        this.createChart('graficoAfiliados', this.chartData);
     },
 }
 </script>
