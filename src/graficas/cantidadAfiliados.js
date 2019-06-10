@@ -1,21 +1,30 @@
 export const cantidadAfiliados = {
-    type: 'line',
+    type: 'bar',
       data: {
-        labels: ['Fonasa', 'Isapre 1', 'Isapre 2', 'Isapre 3'],
+        labels:['Fonasa','Fundación','Fusat','RíoBlanco','SanLorenzo','Isapre','Colmena',
+        'CruzBlanca','Consalud','VidaTres','NuevaMasVida','Banmédica','Chuquicamata','CruzDelNrote'],
         datasets: [
             {
                 label: 'Aprobacion',
-                data: [75, 70, 45, 37],
+                data: ["14","13","12","11","10","9","8",7,6,5,4,3,2],
                 borderWidth: 5,
+                backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+                ],
                 fill:false,
-                borderColor:   'rgb(205, 92, 92)',
-              },
-              {
-                label: 'Desaprobacion',
-                data: [8, 68, 55, 17],
-                borderWidth: 5,
-                fill:false,
-                borderColor:   'rgb(102, 140, 255, 0.7)',
+                borderColor:'rgba(0, 0, 0, 0.1)',
               },
          
         ]

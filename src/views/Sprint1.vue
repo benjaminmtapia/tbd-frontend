@@ -10,18 +10,19 @@
         <Sentimientos/>
             </v-flex>
         </v-layout>
-
-        <v-layout wrap justify-center mt-5>
         
-            <v-flex xs6 mt-5 white pa-3>
+        <v-layout wrap justify-center mt-5>
             
+            <v-flex xs6 mt-5 white pa-3 style="background-color:#D4D6FF !important">
+            <vs-card actionable class="cardx" >
+                <h2 style="text-align:center;">Cantidad de Afiliados</h2>
                 <cantidadAfiliados/>
+            </vs-card>
             </v-flex>
         </v-layout>
         
          <v-layout wrap justify-center mt-5>
             <v-flex xs6 mt-5 white pa-3>
-                <h2 style="text-align:center;">Fondos de Salud con mayor cantidad de Afiliados </h2>
                 <masComentadas/>
             </v-flex>
         </v-layout>
