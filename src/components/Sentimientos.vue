@@ -1,6 +1,6 @@
 <template>
     <div>
-    <canvas id="graficoSentiemientos" width="300" height="200"></canvas>
+    <canvas id="graficoSentimientos" width="300" height="200"></canvas>
     </div>
 </template>
 
@@ -9,10 +9,11 @@ import axios from 'axios';
 export default {
     data() {
         return {
+            datos: [],
             chartData:{
                 type:'bar',
                 data: {
-                    labels:['Fundación','Fusat','RíoBlanco','SanLorenzo','Isapre','Colmena',
+                    labels:['Fundación','Fusat','RíoBlanco','SanLorenzo','Colmena',
                     'CruzBlanca','Consalud','VidaTres','NuevaMasVida','Banmédica','Chuquicamata','CruzDelNrote'],
                     datasets: [
                         {
@@ -20,7 +21,6 @@ export default {
                             data: [],
                             borderWidth: 0,
                             backgroundColor: [
-                            'rgba(54, 162, 235, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
@@ -42,7 +42,18 @@ export default {
                             data: [],
                             borderWidth: 0,
                             backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(255, 102, 102, 0.7)',
+                            'rgba(255, 102, 102, 0.7)',
+                            'rgba(255, 102, 102, 0.7)',
+                            'rgba(255, 102, 102, 0.7)',
+                            'rgba(255, 102, 102, 0.7)',
+                            'rgba(255, 102, 102, 0.7)',
+                            'rgba(255, 102, 102, 0.7)',
+                            'rgba(255, 102, 102, 0.7)',
+                            'rgba(255, 102, 102, 0.7)',
+                            'rgba(255, 102, 102, 0.7)',
+                            'rgba(255, 102, 102, 0.7)',
+                            'rgba(255, 102, 102, 0.7)',
                             ],
                             fill:false,
                             borderColor:'rgba(0, 0, 0, 0.1)',
@@ -67,17 +78,29 @@ export default {
     },
     methods: {
         createChart(chartId, chartData) {
-            const url = 'http://localhost:8081/fondoDeSalud/getComparacionIsapresA';
-            const url2 = 'http://localhost:8081/fondoDeSalud/getComparacionIsapresD';
+            const url = 'http://localhost:8081/fondoDeSalud/getComparacionIsapres';
             
             axios.get(url).then((data) => {
-                axios.get(url2).then((data)=>{
-                    chartData.data.datasets[1].data =data.data;
-                    
-                });
-                chartData.data.datasets[0].data = data.data;
-                console.log (chartData.data.datasets);
+                this.datos = data.data;
+                var aprobacion = new Array();
+                var desaprobacion = new Array();
+                var j = 0;
+                var k = 0;
+                for(var i=0;i<this.datos.length;i++){
+                    if(i%2 == 0){
+                        aprobacion[j] = this.datos[i];
+                        j++;
+                    }
+                    else{
+                        desaprobacion[k] = this.datos[i];
+                        k++;
+                    }
+                }
+                chartData.data.datasets[0].data = aprobacion;
+                chartData.data.datasets[1].data = desaprobacion;
                 const ctx = document.getElementById(chartId);
+                console.log(ctx);
+                console.log(chartData);
                 const graficoSentiemientos = new Chart(ctx, {
                     type: chartData.type,
                     data: chartData.data,
