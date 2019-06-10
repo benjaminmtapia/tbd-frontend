@@ -99,8 +99,6 @@ export default {
                 chartData.data.datasets[0].data = aprobacion;
                 chartData.data.datasets[1].data = desaprobacion;
                 const ctx = document.getElementById(chartId);
-                console.log(ctx);
-                console.log(chartData);
                 const graficoSentiemientos = new Chart(ctx, {
                     type: chartData.type,
                     data: chartData.data,
