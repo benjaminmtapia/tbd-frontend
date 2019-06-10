@@ -2,12 +2,14 @@
     <v-container >
         <v-layout wrap justify-center mt-4>
         
-            <v-flex xs8 mt-4 white pa-3>
+            <v-flex xs8 mt-4 white pa-3 style="background-color:#D4D6FF !important">
+                <vs-card actionable class="cardx" >
             <h2 style="text-align:center">Atención de Isapres según Usuarios de Twitter</h2>
             <br>
             <p>A partir de un análisis de sentimientos de los Tweets de diversos usuarios, se presenta
             cómo perciben ellos la atención de salud gracias a los distintos Fondos de Salud incluído Fonasa </p>    
         <Sentimientos/>
+                </vs-card>
             </v-flex>
         </v-layout>
         
