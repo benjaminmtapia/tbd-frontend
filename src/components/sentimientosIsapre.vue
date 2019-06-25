@@ -1,6 +1,6 @@
 <template>
     <div>
-    <canvas id="graficoSentimientos" width="300" height="200"></canvas>
+    <canvas id="sentimientosIsapre" width="300" height="200"></canvas>
     </div>
 </template>
 
@@ -13,25 +13,13 @@ export default {
             chartData:{
                 type:'bar',
                 data: {
-                    labels:['Fundación','Fusat','RíoBlanco','SanLorenzo','Colmena',
-                    'CruzBlanca','Consalud','VidaTres','NuevaMasVida','Banmédica','Chuquicamata','CruzDelNrote'],
+                    labels:['Sentimientos respecto a Isapre'],
                     datasets: [
                         {
                             label: 'Acuerdo',
                             data: [],
                             borderWidth: 0,
                             backgroundColor: [
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
                             ],
                             fill:false,
@@ -42,17 +30,6 @@ export default {
                             data: [],
                             borderWidth: 0,
                             backgroundColor: [
-                            'rgba(255, 102, 102, 0.7)',
-                            'rgba(255, 102, 102, 0.7)',
-                            'rgba(255, 102, 102, 0.7)',
-                            'rgba(255, 102, 102, 0.7)',
-                            'rgba(255, 102, 102, 0.7)',
-                            'rgba(255, 102, 102, 0.7)',
-                            'rgba(255, 102, 102, 0.7)',
-                            'rgba(255, 102, 102, 0.7)',
-                            'rgba(255, 102, 102, 0.7)',
-                            'rgba(255, 102, 102, 0.7)',
-                            'rgba(255, 102, 102, 0.7)',
                             'rgba(255, 102, 102, 0.7)',
                             ],
                             fill:false,
@@ -78,7 +55,7 @@ export default {
     },
     methods: {
         createChart(chartId, chartData) {
-            const url = 'http://localhost:8081/fondoDeSalud/getComparacionIsapres';
+            const url = 'http://localhost:8081/fondoDeSalud/getIsapre';
             
             axios.get(url).then((data) => {
                 this.datos = data.data;
@@ -109,7 +86,7 @@ export default {
         },
     },
     mounted() {
-        this.createChart('graficoSentimientos', this.chartData);
+        this.createChart('sentimientosIsapre', this.chartData);
     },
 }
 </script>
