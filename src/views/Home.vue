@@ -100,7 +100,6 @@
           </vs-card>
       </v-flex>
     </v-layout>
-    <Sprint1/>
   </v-container>
   
 </template>

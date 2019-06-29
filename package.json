@@ -19,6 +19,7 @@
     "vue-axios": "^2.1.4",
     "vue-chart-js": "^1.4.1",
     "vue-chartjs": "^3.4.2",
+    "vue-d3-network": "^0.1.28",
     "vue-router": "^3.0.3",
     "vuesax": "^3.8.74",
     "vuetify": "^1.5.5"

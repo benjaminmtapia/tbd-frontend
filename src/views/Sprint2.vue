@@ -2,18 +2,27 @@
     <v-container>
         <v-layout justify-center>
             <v-flex xs6>
-            <Sentimientos/>
+            <grafoFonasa/>
+            </v-flex>
+            <v-flex xs6>
+            <grafoIsapre/>
+            </v-flex>
+            <v-flex xs6>
+            <cantidadAfiliados/>
             </v-flex>
         </v-layout>
     </v-container>
 </template>
 
 <script>
+import grafoFonasa from '../grafos/grafoFonasa.vue'
+import grafoIsapre from '../grafos/grafoIsapre.vue'
 import cantidadAfiliados from '../components/cantidadAfiliados.vue'
-import Sentimientos from '../components/Sentimientos.vue'
 export default {
     components:{
-        cantidadAfiliados,Sentimientos
+        grafoFonasa,
+        grafoIsapre,
+        cantidadAfiliados
     }
 }
 </script>
