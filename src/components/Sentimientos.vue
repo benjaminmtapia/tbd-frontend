@@ -113,3 +113,8 @@ export default {
     },
 }
 </script>
+<style>
+p{
+    font-size:13px;
+}
+</style>
