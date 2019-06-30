@@ -1,27 +1,35 @@
 {
-  "isapres": [
+  "usuario": [
     {
       "id": 1,
-      "first_name": "Fonasa",
-      "acuerdo": "75"
+      "nombre": "Franco Labra",
+      "seguidores": "6520"
     },
     {
       "id": 2,
-      "first_name": "Consalud",
-      "acuerdo": "32"
+      "nombre": "Diego Aguila",
+      "seguidores": "982"
     },
     {
       "id": 3,
-      "first_name": "Colmena",
-      "acuerdo": "78"
+      "nombre": "Benjamín Muñoz",
+      "seguidores": "4473"
+    },
+    {
+      "id": 4,
+      "nombre": "Nicolás Cárcamo",
+      "seguidores": "5068"
+    },
+    {
+      "id":5,
+      "nombre": "Alexander Palma",
+      "seguidores": "345"
+    },
+    {
+      "id":6,
+      "nombre":"Isapre",
+      "seguidores": "0"
     }
-  ],
-  "datos":{
-    "acuerdo":[
-      "25","30"
-    ],
-    "desacuerdo":[
-      "55","32"
-    ]
-  }
+  ]
+ 
 }

@@ -112,7 +112,6 @@
     components: {
       Hover,
       Sprint1
-
     }
   }
 </script>

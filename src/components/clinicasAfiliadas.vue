@@ -1,6 +1,7 @@
 <template>
   <div>
-    <vs-table max-items="10" pagination :data="isapres">
+  
+    <vs-table max-items="5" pagination :data="isapres">
       
       <template slot="thead">
         <vs-col vs-w="5" style="font-weight: bold; font-size: 20px;">
@@ -12,14 +13,14 @@
       </template>
 
       <template slot-scope="{data}">
-        <vs-tr :key="indextr" v-for="(tr, indextr) in data" >
+        <vs-tr :key="indextr" v-for="(tr, indextr) in isapres" >
         
-          <vs-col vs-w="4" :data="data[indextr].idFondo" >
-            {{data[indextr].nombre}}
+          <vs-col vs-w="4" :data="isapres[indextr].idFondo" >
+            {{isapres[indextr].nombre}}
           </vs-col>
 
-          <vs-col vs-w="7" :data="data[indextr].clinicasAfiliadas">
-           <li> {{data[indextr].clinicasAfiliadas}}</li>
+          <vs-col vs-w="7" :data="isapres[indextr].clinicasAfiliadas">
+           <li> {{isapres[indextr].clinicasAfiliadas}}</li>
           </vs-col>
 
           
@@ -67,7 +68,7 @@ export default {
           }
         }
     },
-    async created() {
+    created() {
         this.getDatos();
         
     },
