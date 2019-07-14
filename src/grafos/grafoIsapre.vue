@@ -35,21 +35,25 @@ export default {
            if(data[i].nombre != "Isapre"){
             this.nodes.push({
             id: i,
-            name: data[i].nombre,
+            name: data[i].name,
             _color:'#66CABB',
-            _size: 100
+            _size: data[i].followersCount*0.001
           });
           }
           else{
             this.nodes.push({
               id: i,
-              name: data[i].nombre,
+              name: data[i].name,
               _color: 'FF7C00',
-              _size:50,
+              _size:80,
             });
           }
           i++;
          });
+         this.nodes.push({
+           id:5,
+           name: 'Isapre',
+         })
          
       },
       setLinks(data){
@@ -63,7 +67,7 @@ export default {
       }
     },
     created() {
-      const url = 'http://localhost:3000/usuario';
+      const url = 'http://localhost:8081/neo/fondo/Isapre/5';
       axios.get(url).then((response)=>{
         this.data = response.data;
         this.actualdata = 0;

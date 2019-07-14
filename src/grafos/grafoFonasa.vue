@@ -1,33 +1,24 @@
 <template>
     <div>
+    
         <d3-network :net-nodes="nodes" :net-links="links" :options="options" />
     </div>
 </template>
 
 <script>
 import D3Network from 'vue-d3-network';
+import axios from 'axios';
 export default {
     components: {
     D3Network
-  },
+  },  
     data() {
         return {
-         nodes: [
-        { id: 1, name: 'Usuario 1',_color:'red',_size:50 },
-        { id: 2, name: 'Usuario 2',_color:'yellow',_size:10 },
-        { id: 3, name: 'Usuario 3', _color:'blue',_size:20 },
-        { id: 4, name: 'Usuario 4',_color:'green', _size:60, },
-        { id: 5, name: 'Usuario 5', _color: 'white', _size:80 },
-        { id: 6, name: 'Fonasa', _color:'black',_size:100 },
-
-      ],
-      links: [
-        { sid: 1, tid: 6, _color:'red' },
-        { sid: 2, tid: 6, _color:'f0f' },
-        { sid: 3, tid: 6,_color:'rebeccapurple' },
-        { sid: 4, tid: 6 },
-        { sid: 5, tid: 6 },
-      ],
+          dataNeeded:1,
+          actualdata:0,
+          data:[],
+         nodes: [],
+      links: [],
       options:
       {
         force: 10000,
@@ -37,7 +28,62 @@ export default {
       },
         }
     },
-    
+    methods: {
+      setNodes(data){
+        let i = 0;
+         data.forEach(element=>{
+           if(data[i].nombre != "Fonasa"){
+            this.nodes.push({
+            id: i,
+            name: data[i].name,
+            _color:'#66CABB',
+            _size: data[i].followersCount*0.00003
+          });
+          }
+          else{
+            this.nodes.push({
+              id: i,
+              name: data[i].name,
+              _color: 'FF7C00',
+              _size:80,
+            });
+          }
+          i++;
+         });
+         this.nodes.push({
+           id:5,
+           name: 'Fonasa',
+         })
+         
+      },
+      setLinks(data){
+        var i =0;
+        data.forEach(element=>{
+          this.links.push({
+            sid: i, tid: 5, _color:'red'
+          });
+          i++;
+        })
+      }
+    },
+    created() {
+      const url = 'http://localhost:8081/neo/fondo/Fonasa/5';
+      axios.get(url).then((response)=>{
+        this.data = response.data;
+        this.actualdata = 0;
+        console.log(this.data);
+        
+        this.actualdata =1;
+      });
+    },
+    watch: {
+      actualdata: function(value){
+        if(value == this.dataNeeded){
+        this.setNodes(this.data);
+        this.setLinks(this.data);
+        }
+      }
+    },
 }
 </script>
 <style src="vue-d3-network/dist/vue-d3-network.css"></style>
