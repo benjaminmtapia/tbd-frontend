@@ -47,8 +47,7 @@ export default {
 </script>
 <style scope>
 #app{
-  background-image: url(https://i.stack.imgur.com/nItQK.png);
-  background-size: 100% 100%;
+  background-color: mistyrose !important;
 }
 .about{
   padding-top: 30px;
@@ -66,9 +65,10 @@ export default {
   margin-top:5px;
 }
 .navbar {
- background-color: #D4D6FF !important;
+ background-color: #9CBAFF !important;
  font-family: Arial;
  font-size:15px;
+ color: #696969;
 }
 
 </style>

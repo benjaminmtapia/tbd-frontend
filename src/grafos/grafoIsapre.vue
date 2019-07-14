@@ -1,5 +1,6 @@
 <template>
     <div>
+    
         <d3-network :net-nodes="nodes" :net-links="links" :options="options" />
     </div>
 </template>
@@ -10,7 +11,7 @@ import axios from 'axios';
 export default {
     components: {
     D3Network
-  },
+  },  
     data() {
         return {
           dataNeeded:1,
