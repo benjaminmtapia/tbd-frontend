@@ -8,7 +8,7 @@ import "chart.js";
 import "hchs-vue-charts";
 import axios from 'axios';
 import VueAxios from 'vue-axios';
- 
+
 Vue.use(VueAxios, axios);
 Vue.use(window.VueCharts);
 Vue.config.productionTip = false

@@ -21,17 +21,19 @@
       </div>
     </v-navigation-drawer>
 
-    <v-content> <router-view/> 
-    
+    <v-content> <router-view/>
+
     </v-content>
   </v-app>
 </template>
-
 <script>
 import Vue from 'vue'
 import Vuesax from 'vuesax'
 import 'vuesax/dist/vuesax.css' //Vuesax styles
 import 'material-icons/iconfont/material-icons.css';
+import VueApexCharts from 'vue-apexcharts'
+Vue.use(VueApexCharts)
+Vue.component('apexchart', VueApexCharts)
 Vue.use(Vuesax)
 
 export default {
