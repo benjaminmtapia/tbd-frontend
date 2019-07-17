@@ -1,6 +1,6 @@
 <template>
   <div align="center">
-    <apexchart width="500" type="bar" :options="options" :series="series"></apexchart>
+    <apexchart width="450" type="bar" :options="options" :series="series"></apexchart>
   </div>
 </template>
 <script>
@@ -28,12 +28,12 @@ export default {
   },
   methods: {
     getUsuarios(){
-      const url = 'http://localhost:3000/usuario';
+      const url = 'http://localhost:8081/neo/fondo/Isapre/5';
       axios.get(url).then((data) => {
           this.usuarios = data.data;
           for(var i=0;i<5;i++){
-            this.options.xaxis.categories.push(this.usuarios[i].nombre);
-            this.series[0].data.push(this.usuarios[i].seguidores);
+            this.options.xaxis.categories.push(this.usuarios[i].name);
+            this.series[0].data.push(this.usuarios[i].followersCount);
           }
         });
     },

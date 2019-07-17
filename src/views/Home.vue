@@ -100,6 +100,7 @@
           </vs-card>
       </v-flex>
     </v-layout>
+   
   </v-container>
   
 </template>
@@ -107,11 +108,12 @@
 
 <script>
   import Hover from '../components/Hovers.vue'
+  import Sprint2 from '../views/Sprint2.vue'
   import Sprint1 from '../views/Sprint1.vue'
   export default {
     components: {
       Hover,
-      Sprint1
+     Sprint1
     }
   }
 </script>

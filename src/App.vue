@@ -3,7 +3,7 @@
   <v-app>
     <v-toolbar app class="navbar">
       <v-toolbar-side-icon title="Menú" @click="drawer=!drawer"></v-toolbar-side-icon>
-      <h3> Taller de Bases de Datos </h3>
+      <h3> Fondos de Salud </h3>
       <v-spacer></v-spacer>
     </v-toolbar>
 
@@ -49,7 +49,7 @@ export default {
 </script>
 <style scope>
 #app{
-  background-color: mistyrose !important;
+  background-color: #FAFAFA !important;
 }
 .about{
   padding-top: 30px;
@@ -72,5 +72,7 @@ export default {
  font-size:15px;
  color: #696969;
 }
-
+h3{
+  color:#0A0A0A
+}
 </style>

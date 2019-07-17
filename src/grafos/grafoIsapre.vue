@@ -37,7 +37,7 @@ export default {
             id: i,
             name: data[i].name,
             _color:'#66CABB',
-            _size: data[i].followersCount*0.001
+            _size: data[i].followersCount*0.002
           });
           }
           else{
